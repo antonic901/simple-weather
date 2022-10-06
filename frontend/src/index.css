@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: "Zelda-Bold";
+  src: local("Zelda-Bold"),
+      url(./fonts/Zelda-Normal-7OTF/Zelda-Bold.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "Zelda-DemiBold";
+  src: local("Zelda-Regular"),
+      url(./fonts/Zelda-Normal-7OTF/Zelda-DemiBold.otf) format("truetype");
+}
