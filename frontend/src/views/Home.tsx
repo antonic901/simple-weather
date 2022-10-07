@@ -1,6 +1,7 @@
-import { Box, IconButton } from "@mui/material";
-import AppBar from "../components/AppBar";
+import { Box } from "@mui/material";
+import Header from "../components/Header";
 import SearchBox from "../components/common/SearchBox";
+import Footer from "../components/Footer";
 import HomeInfo from "../components/Home/HomeInfo";
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
             flexDirection="column"
             height="100vh"
         >
-            <AppBar />
+            <Header />
             <Box
                 display="flex"
                 flexDirection="column"
@@ -23,7 +24,7 @@ const Home = () => {
                 <SearchBox />
                 <HomeInfo />
             </Box>
-            <div style={{ height: 60 }}></div>
+            <Footer />
         </Box>
     );
 };
