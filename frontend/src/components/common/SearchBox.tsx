@@ -5,7 +5,7 @@ import Card from "@mui/material/Card";
 
 const SearchBox = () => {
     return (
-        <Card sx={{ width: 610, borderRadius: "16px", padding: 1 }}>
+        <Card sx={{ maxWidth: '610px', borderRadius: "16px", padding: 1 }}>
             <div style={{ display: "flex", flexDirection: "row" }}>
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     <img

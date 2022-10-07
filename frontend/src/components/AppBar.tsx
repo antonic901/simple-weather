@@ -28,12 +28,12 @@ const style = {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    maxWidth: 400,
     bgcolor: "background.paper",
     // border: "2px solid #000",
     borderRadius: 5,
     boxShadow: 24,
-    p: 5,
+    p: 5
 };
 
 const AppBar = () => {
@@ -72,7 +72,7 @@ const AppBar = () => {
                     >
                         To continue, log in to Simple Weather.
                     </div>
-                    <Stack direction="column" spacing={2} marginTop={2}>
+                    {/* <Stack direction="column" spacing={2} marginTop={2}>
                         <Button
                             variant="contained"
                             startIcon={<FacebookIcon />}
@@ -93,7 +93,7 @@ const AppBar = () => {
                         >
                             Continue with GitHub
                         </Button>
-                    </Stack>
+                    </Stack> */}
                     <Divider sx={{ margin: 2 }} />
                     <TextField
                         sx={{ mb: 1 }}
@@ -109,16 +109,34 @@ const AppBar = () => {
                         fullWidth
                     />
                     <FormControlLabel
-                        sx={{mt: 1, mb: 1}}
+                        sx={{ mt: 1, mb: 1 }}
                         control={<Checkbox />}
-                        label={<div style={{color: '#37474F', fontWeight: 450}}>Remember Me</div>}
+                        label={<div style={{ color: '#37474F', fontWeight: 450 }}>Remember Me</div>}
                     />
                     <div style={{ display: "flex", justifyContent: "center" }}>
                         <Button sx={{ width: "100%" }} variant="outlined">
                             Sign in
                         </Button>
                     </div>
-                    <div style={{textAlign: 'center', color: '#9dcae6', marginTop: '10px', fontWeight: 450}}>Forgot Your Password?</div>
+                    <div style={{ textAlign: 'center', marginTop: '10px' }}><a href="www.google.com" style={{ color: '#9dcae6', fontWeight: 'bolder', textDecoration: 'none' }}>Forgot Your Password?</a></div>
+                    <Divider sx={{ margin: 2 }} ><span style={{ color: '#37474F' }}>CONTINUE WITH</span></Divider>
+                    <Stack direction="row" justifyContent='center' spacing={2} marginTop={2}>
+                        <IconButton color="primary" size="large">
+                            <FacebookIcon fontSize="inherit" />
+                        </IconButton>
+                        <IconButton color="error" size="large">
+                            <GoogleIcon fontSize="inherit" />
+                        </IconButton>
+                        <IconButton color="info" size="large">
+                            <GithubIcon fontSize="inherit" />
+                        </IconButton>
+                    </Stack>
+                    <Divider sx={{ margin: 2 }} ><span style={{ color: '#37474F' }}>OR</span></Divider>
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                        <Button sx={{ width: "100%" }} variant="contained" color="success">
+                            Sign Up
+                        </Button>
+                    </div>
                 </Box>
             </Modal>
         </Box>
