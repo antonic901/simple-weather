@@ -36,6 +36,12 @@ const SignupForm = (props: any) => {
             />
             <TextField
                 sx={{ mb: 1 }}
+                label="Username"
+                placeholder="Enter your username..."
+                fullWidth
+            />
+            <TextField
+                sx={{ mb: 1 }}
                 label="E-Mail"
                 placeholder="Enter your e-mail..."
                 fullWidth

@@ -32,7 +32,6 @@ const SearchBox = () => {
                     >
                         <Autocomplete
                             disablePortal
-                            id="combo-box-demo"
                             options={["A", "B", "C"]}
                             renderInput={(params) => (
                                 <TextField
@@ -60,7 +59,6 @@ const SearchBox = () => {
                     >
                         <Autocomplete
                             disablePortal
-                            id="combo-box-demo"
                             options={["A", "B", "C"]}
                             renderInput={(params) => (
                                 <TextField

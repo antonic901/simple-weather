@@ -2,7 +2,7 @@ import { Box, IconButton } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 import HelpIcon from "@mui/icons-material/Help";
 import { useState } from "react";
-import SettingsModal from "./Modals/SettingsModal";
+import SettingsModal from "./Modals/SettingsModal/SettingsModal";
 import HelpModal from "./Modals/HelpModal";
 
 const Footer = () => {

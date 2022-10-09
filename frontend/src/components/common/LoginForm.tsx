@@ -54,6 +54,7 @@ const LoginForm = (props: any) => {
                 fullWidth
             />
             <TextField
+                id="1"
                 sx={{ mt: 1 }}
                 label="Password"
                 placeholder="enter password"
@@ -64,9 +65,11 @@ const LoginForm = (props: any) => {
                 sx={{ mt: 1, mb: 1 }}
                 control={<Checkbox />}
                 label={
-                    <div style={{ color: "#37474F", fontWeight: 450 }}>
-                        Remember Me
-                    </div>
+                    <div style={{
+                        color: "#9E9E9E",
+                        fontWeight: "normal",
+                        textAlign: "center",
+                    }}>Remember Me</div>
                 }
             />
             <div style={{ display: "flex", justifyContent: "center" }}>
@@ -76,14 +79,17 @@ const LoginForm = (props: any) => {
             </div>
             <div style={{ textAlign: "center", marginTop: "10px" }}>
                 <button
-                    onClick={() => {props.onChange('forgotpassword')}}
+                    onClick={() => { props.onChange('forgotpassword') }}
                     className="button"
                 >
                     Forgot Your Password?
                 </button>
             </div>
             <Divider sx={{ margin: 2 }}>
-                <span style={{ color: "#37474F" }}>CONTINUE WITH</span>
+                <span style={{
+                    color: "#9E9E9E",
+                    fontWeight: "normal",
+                }}>CONTINUE WITH</span>
             </Divider>
             <Stack
                 direction="row"
@@ -102,7 +108,10 @@ const LoginForm = (props: any) => {
                 </IconButton>
             </Stack>
             <Divider sx={{ margin: 2 }}>
-                <span style={{ color: "#37474F" }}>OR</span>
+                <span style={{
+                    color: "#9E9E9E",
+                    fontWeight: "normal",
+                }}>OR</span>
             </Divider>
             <div style={{ display: "flex", justifyContent: "center" }}>
                 <Button
