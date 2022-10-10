@@ -118,10 +118,13 @@ const ProfileTab = () => {
                     <Button
                         onClick={() => setIsEditable(false)}
                         startIcon={<ClearIcon />}
+                        color="error"
                     >
                         Abort
                     </Button>
-                    <Button startIcon={<CheckIcon />}>Confirm</Button>
+                    <Button color="success" startIcon={<CheckIcon />}>
+                        Confirm
+                    </Button>
                 </Stack>
             )}
         </div>

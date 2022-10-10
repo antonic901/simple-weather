@@ -5,7 +5,7 @@ import Card from "@mui/material/Card";
 
 const SearchBox = () => {
     return (
-        <Card sx={{ maxWidth: '610px', borderRadius: "16px", padding: 1 }}>
+        <Card sx={{ maxWidth: "610px", borderRadius: "16px", padding: 1 }}>
             <div style={{ display: "flex", flexDirection: "row" }}>
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     <img
@@ -32,6 +32,7 @@ const SearchBox = () => {
                     >
                         <Autocomplete
                             disablePortal
+                            id="combo-box-demo"
                             options={["A", "B", "C"]}
                             renderInput={(params) => (
                                 <TextField
@@ -59,6 +60,7 @@ const SearchBox = () => {
                     >
                         <Autocomplete
                             disablePortal
+                            id="combo-box-demo"
                             options={["A", "B", "C"]}
                             renderInput={(params) => (
                                 <TextField

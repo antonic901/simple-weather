@@ -1,8 +1,10 @@
-import { Box, Modal, Tab, Tabs } from "@mui/material";
+import { Box, Modal } from "@mui/material";
 import { useState } from "react";
 import GeneralTab from "./Tabs/GeneralTab";
 import LocationsTab from "./Tabs/LocationsTab";
 import ProfileTab from "./Tabs/ProfileTab";
+
+import { StyledTabs as Tabs, StyledTab as Tab } from "../../customized/Tabs";
 
 const style = {
     position: "absolute" as "absolute",
@@ -22,28 +24,18 @@ interface TabPanelProps {
 }
 
 function TabPanel(props: TabPanelProps) {
-    const { children, value, index, ...other } = props;
+    const { value } = props;
 
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`vertical-tabpanel-${index}`}
-            aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
-            {value === 0 && <GeneralTab />}
-            {value === 1 && <ProfileTab />}
-            {value === 2 && <LocationsTab />}
-        </div>
-    );
-}
-
-function a11yProps(index: number) {
-    return {
-        id: `vertical-tab-${index}`,
-        "aria-controls": `vertical-tabpanel-${index}`,
-    };
+    switch (value) {
+        case 0:
+            return <GeneralTab />;
+        case 1:
+            return <ProfileTab />;
+        case 2:
+            return <LocationsTab />;
+        default:
+            return <div>This tab doesn't exists!</div>;
+    }
 }
 
 const SettingsModal = (props: any) => {
@@ -59,25 +51,20 @@ const SettingsModal = (props: any) => {
             aria-describedby="modal-modal-description"
         >
             <Box sx={style}>
-                <Tabs
-                    value={value}
-                    onChange={(e, type: number) => {
-                        setValue(type);
-                    }}
-                    textColor="primary"
-                    indicatorColor="primary"
-                >
-                    <Tab value={0} label="General" {...a11yProps(0)} />
-                    <Tab value={1} label="Profile" {...a11yProps(1)} />
-                    <Tab value={2} label="Locations" {...a11yProps(2)} />
-                </Tabs>
+                <Box>
+                    <Tabs
+                        value={value}
+                        onChange={(e, type: number) => {
+                            setValue(type);
+                        }}
+                        aria-label="styled tabs example"
+                    >
+                        <Tab label="General" />
+                        <Tab label="Profile" />
+                        <Tab label="Locations" />
+                    </Tabs>
+                </Box>
                 <TabPanel value={value} index={0}></TabPanel>
-                <TabPanel value={value} index={1}>
-                    Profile
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                    Locations
-                </TabPanel>
             </Box>
         </Modal>
     );
