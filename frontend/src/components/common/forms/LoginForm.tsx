@@ -10,7 +10,7 @@ import {
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GithubIcon from "@mui/icons-material/GitHub";
-import './LoginForm.css'
+import "./LoginForm.css";
 
 const LoginForm = (props: any) => {
     return (
@@ -24,28 +24,6 @@ const LoginForm = (props: any) => {
             >
                 To continue, log in to Simple Weather.
             </div>
-            {/* <Stack direction="column" spacing={2} marginTop={2}>
-                <Button
-                    variant="contained"
-                    startIcon={<FacebookIcon />}
-                >
-                    Continue with Facebook
-                </Button>
-                <Button
-                    variant="contained"
-                    color="error"
-                    startIcon={<GoogleIcon />}
-                >
-                    Continue with Google
-                </Button>
-                <Button
-                    color="info"
-                    variant="outlined"
-                    startIcon={<GithubIcon />}
-                >
-                    Continue with GitHub
-                </Button>
-            </Stack> */}
             <Divider sx={{ margin: 2 }} />
             <TextField
                 sx={{ mb: 1 }}
@@ -65,11 +43,15 @@ const LoginForm = (props: any) => {
                 sx={{ mt: 1, mb: 1 }}
                 control={<Checkbox />}
                 label={
-                    <div style={{
-                        color: "#9E9E9E",
-                        fontWeight: "normal",
-                        textAlign: "center",
-                    }}>Remember Me</div>
+                    <div
+                        style={{
+                            color: "#9E9E9E",
+                            fontWeight: "normal",
+                            textAlign: "center",
+                        }}
+                    >
+                        Remember Me
+                    </div>
                 }
             />
             <div style={{ display: "flex", justifyContent: "center" }}>
@@ -79,17 +61,23 @@ const LoginForm = (props: any) => {
             </div>
             <div style={{ textAlign: "center", marginTop: "10px" }}>
                 <button
-                    onClick={() => { props.onChange('forgotpassword') }}
+                    onClick={() => {
+                        props.onChange("forgotpassword");
+                    }}
                     className="button"
                 >
                     Forgot Your Password?
                 </button>
             </div>
             <Divider sx={{ margin: 2 }}>
-                <span style={{
-                    color: "#9E9E9E",
-                    fontWeight: "normal",
-                }}>CONTINUE WITH</span>
+                <span
+                    style={{
+                        color: "#9E9E9E",
+                        fontWeight: "normal",
+                    }}
+                >
+                    CONTINUE WITH
+                </span>
             </Divider>
             <Stack
                 direction="row"
@@ -108,10 +96,14 @@ const LoginForm = (props: any) => {
                 </IconButton>
             </Stack>
             <Divider sx={{ margin: 2 }}>
-                <span style={{
-                    color: "#9E9E9E",
-                    fontWeight: "normal",
-                }}>OR</span>
+                <span
+                    style={{
+                        color: "#9E9E9E",
+                        fontWeight: "normal",
+                    }}
+                >
+                    OR
+                </span>
             </Divider>
             <div style={{ display: "flex", justifyContent: "center" }}>
                 <Button

@@ -2,10 +2,15 @@ import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
+import { SxProps, Theme } from "@mui/material";
 
-const SearchBox = () => {
+type Props = {
+    sx: SxProps<Theme>;
+};
+
+const SearchBox = (props: Props) => {
     return (
-        <Card sx={{ maxWidth: "610px", borderRadius: "16px", padding: 1 }}>
+        <Card sx={{ padding: 1, ...props.sx }}>
             <div style={{ display: "flex", flexDirection: "row" }}>
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     <img

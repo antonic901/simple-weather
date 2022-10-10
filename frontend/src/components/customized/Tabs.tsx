@@ -15,7 +15,6 @@ export const StyledTabs = styled((props: StyledTabsProps) => (
         }}
     />
 ))({
-    // borderBottom: "2px solid #e8e8e8",
     "& .MuiTabs-flexContainer": {
         display: "flex",
         justifyContent: "center",

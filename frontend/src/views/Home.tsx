@@ -1,20 +1,22 @@
-import { Box } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import SearchBox from "../components/common/SearchBox";
 import HomeInfo from "../components/Home/HomeInfo";
 
 const Home = () => {
     return (
-        <Box
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="stretch"
-            sx={{ pr: 2, pl: 2 }}
-            flex={1}
-        >
-            <SearchBox />
+        <Stack sx={{ flexGrow: 1, justifyContent: "center" }}>
+            <Container
+                sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                }}
+            >
+                <SearchBox
+                    sx={{ flexGrow: 1, maxWidth: 610, borderRadius: "16px" }}
+                />
+            </Container>
             <HomeInfo />
-        </Box>
+        </Stack>
     );
 };
 

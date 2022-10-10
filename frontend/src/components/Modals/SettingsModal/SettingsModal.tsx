@@ -1,21 +1,11 @@
-import { Box, Modal } from "@mui/material";
+import { Box } from "@mui/material";
 import { useState } from "react";
 import GeneralTab from "./Tabs/GeneralTab";
 import LocationsTab from "./Tabs/LocationsTab";
 import ProfileTab from "./Tabs/ProfileTab";
 
+import { CustomDialog as Dialog } from "../../customized/Dialog";
 import { StyledTabs as Tabs, StyledTab as Tab } from "../../customized/Tabs";
-
-const style = {
-    position: "absolute" as "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    maxWidth: 800,
-    bgcolor: "background.paper",
-    borderRadius: 5,
-    boxShadow: 24,
-};
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -42,31 +32,29 @@ const SettingsModal = (props: any) => {
     const [value, setValue] = useState(0);
 
     return (
-        <Modal
-            open={props.open}
+        <Dialog
             onClose={() => {
                 props.onClose();
             }}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
+            open={props.open}
+            fullWidth
+            maxWidth="md"
         >
-            <Box sx={style}>
-                <Box>
-                    <Tabs
-                        value={value}
-                        onChange={(e, type: number) => {
-                            setValue(type);
-                        }}
-                        aria-label="styled tabs example"
-                    >
-                        <Tab label="General" />
-                        <Tab label="Profile" />
-                        <Tab label="Locations" />
-                    </Tabs>
-                </Box>
-                <TabPanel value={value} index={0}></TabPanel>
+            <Box>
+                <Tabs
+                    value={value}
+                    onChange={(e, type: number) => {
+                        setValue(type);
+                    }}
+                    aria-label="styled tabs example"
+                >
+                    <Tab label="General" />
+                    <Tab label="Profile" />
+                    <Tab label="Locations" />
+                </Tabs>
             </Box>
-        </Modal>
+            <TabPanel value={value} index={0}></TabPanel>
+        </Dialog>
     );
 };
 
