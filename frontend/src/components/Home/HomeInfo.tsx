@@ -17,13 +17,14 @@ const HomeInfo = () => {
                 <div style={{ fontSize: '3.0rem', fontWeight: 900 }}>&#8451;</div>
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-                {days.map(() => {
+                {days.map((index) => {
                     return <Box
                         display="flex"
                         flexDirection="column"
                         justifyContent="center"
                         alignItems="center"
                         margin={2}
+                        key={index}
                     >
                         <div style={{ color: '#37474F', fontFamily: 'Zelda-DemiBold' }}>MONDAY</div>
                         <div style={{ display: 'flex', color: 'white' }}>

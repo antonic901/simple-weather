@@ -1,30 +1,22 @@
-import { Box, IconButton } from "@mui/material";
-import AppBar from "../components/AppBar";
+import { Container, Stack } from "@mui/material";
 import SearchBox from "../components/common/SearchBox";
 import HomeInfo from "../components/Home/HomeInfo";
 
 const Home = () => {
     return (
-        <Box
-            sx={{ background: `linear-gradient(to bottom right, ${'#cee5f3'} 50%, ${'#fff2e2'} 90%)` }}
-            display="flex"
-            flexDirection="column"
-            height="100vh"
-        >
-            <AppBar />
-            <Box
-                display="flex"
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="stretch"
-                sx={{ pr: 2, pl: 2 }}
-                flex={1}
+        <Stack sx={{ flexGrow: 1, justifyContent: "center" }}>
+            <Container
+                sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                }}
             >
-                <SearchBox />
-                <HomeInfo />
-            </Box>
-            <div style={{ height: 60 }}></div>
-        </Box>
+                <SearchBox
+                    sx={{ flexGrow: 1, maxWidth: 610, borderRadius: "16px" }}
+                />
+            </Container>
+            <HomeInfo />
+        </Stack>
     );
 };
 
