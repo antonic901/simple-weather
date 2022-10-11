@@ -16,6 +16,7 @@ import WeatherInfo from "../components/common/WeatherInfo";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { grey } from "@mui/material/colors";
+import { useParams } from "react-router-dom";
 
 const theme = createTheme({
     palette: {
@@ -26,6 +27,9 @@ const theme = createTheme({
 });
 
 const Weather = () => {
+    let { id } = useParams();
+    console.log("LOGGING: opening information for weather with ID: " + id);
+
     const [anchor, setanchor] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchor);
     const [range, setRange] = useState(8);
@@ -75,7 +79,7 @@ const Weather = () => {
                             alt="weather-icon"
                             width={128}
                             height={128}
-                            src="http://openweathermap.org/img/wn/10d@2x.png"
+                            src="https://openweathermap.org/img/wn/10d@2x.png"
                         />
                         <div
                             style={{
@@ -108,9 +112,8 @@ const Weather = () => {
             <Divider sx={{ mx: "10px" }} />
             <Grid container columns={8} padding="10px">
                 {daily.map((i) => (
-                    <Grid xs={4} sm={2} lg={1}>
+                    <Grid key={i} xs={4} sm={2} lg={1}>
                         <WeatherCard
-                            key={i}
                             label1="Thursday"
                             label2="High"
                             label3="Low"
@@ -126,7 +129,6 @@ const Weather = () => {
                     marginLeft: "10px",
                     marginRight: "10px",
                     marginTop: "5px",
-                    // marginBottom: "5px",
                 }}
             >
                 <Typography color="#546E7A" fontWeight="bold">
@@ -160,6 +162,7 @@ const Weather = () => {
                         >
                             {Array.from(Array(6).keys()).map((i) => (
                                 <MenuItem
+                                    key={i}
                                     onClick={() => {
                                         setRange((i + 1) * 8);
                                         setanchor(null);
@@ -175,9 +178,8 @@ const Weather = () => {
             <Divider sx={{ mx: "10px" }} />
             <Grid container columns={8} padding="10px">
                 {hourly.map((i) => (
-                    <Grid xs={4} sm={2} lg={1}>
+                    <Grid key={i} xs={4} sm={2} lg={1}>
                         <WeatherCard
-                            key={i}
                             label1="2 AM"
                             label2="Temperature"
                             label3="Feels like"

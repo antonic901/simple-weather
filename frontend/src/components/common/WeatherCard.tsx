@@ -1,9 +1,9 @@
 import { Card, Typography } from "@mui/material";
 
 type Props = {
-    label1: string;
-    label2: string;
-    label3: string;
+    label1: String;
+    label2: String;
+    label3: String;
 };
 
 const WeatherCard = (props: Props) => {
@@ -24,7 +24,7 @@ const WeatherCard = (props: Props) => {
                         alt="weather-icon"
                         width={128}
                         height={128}
-                        src="http://openweathermap.org/img/wn/10d@2x.png"
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
                     />
                 </div>
                 <Typography

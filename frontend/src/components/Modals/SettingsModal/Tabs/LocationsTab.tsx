@@ -55,6 +55,7 @@ const LocationsTab = () => {
                                     alignItems="center"
                                 >
                                     <img
+                                        alt="flag"
                                         width="32px"
                                         height="32px"
                                         src="https://cdn-icons-png.flaticon.com/512/330/330553.png"

@@ -1,5 +1,6 @@
 import { Box, Divider } from "@mui/material";
 import "../../styles/WeatherWidget.css";
+import { Link } from "react-router-dom";
 
 const style = {
     display: "flex",
@@ -8,11 +9,17 @@ const style = {
     p: 1,
     m: 1,
     mb: 1.5,
+    textDecoration: "none",
 };
 
-const WeatherWidget = () => {
+const WeatherWidget = (props: any) => {
     return (
-        <Box className="widget" sx={style}>
+        <Box
+            className="widget"
+            sx={style}
+            component={Link}
+            to={`/weather/${props.id}`}
+        >
             <Box
                 display="flex"
                 flexDirection="column"
@@ -43,7 +50,7 @@ const WeatherWidget = () => {
                         alt="weather-icon"
                         width={84}
                         height={84}
-                        src="http://openweathermap.org/img/wn/10d@2x.png"
+                        src="https://openweathermap.org/img/wn/10d@2x.png"
                     />
                 </div>
                 <div style={{ color: "#37474F", fontFamily: "Zelda-Bold" }}>

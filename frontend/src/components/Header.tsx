@@ -18,13 +18,28 @@ const Header = (props: any) => {
                 paddingLeft={1}
                 paddingRight={1}
             >
-                <IconButton onClick={() => { props.openSidebar(true) }} size="large">
+                <IconButton
+                    onClick={() => {
+                        props.openSidebar(true);
+                    }}
+                    size="large"
+                >
                     <MenuIcon fontSize="inherit" />
                 </IconButton>
-                <IconButton onClick={() => { setOpen(true) }} size="large">
+                <IconButton
+                    onClick={() => {
+                        setOpen(true);
+                    }}
+                    size="large"
+                >
                     <LoginIcon fontSize="inherit" />
                 </IconButton>
-                <LoginSignupModal open={open} onClose={() => { setOpen(false) }} />
+                <LoginSignupModal
+                    open={open}
+                    onClose={() => {
+                        setOpen(false);
+                    }}
+                />
             </Box>
         </div>
     );

@@ -5,6 +5,9 @@ import { Box, IconButton, useMediaQuery, useTheme } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import WeatherWidget from "./common/WeatherWidget";
 
+import HomeIcon from "@mui/icons-material/Home";
+import { Link } from "react-router-dom";
+
 const Sidebar = (props: any) => {
     const theme = useTheme();
     const isPhone = useMediaQuery(theme.breakpoints.between("xs", "sm"));
@@ -23,7 +26,7 @@ const Sidebar = (props: any) => {
 
     const widgets: JSX.Element[] = [];
     for (let i = 0; i < 2; i++) {
-        widgets.push(<WeatherWidget key={i} />);
+        widgets.push(<WeatherWidget id={i} key={i} />);
     }
 
     const list = (anchor: string) => (
@@ -45,6 +48,14 @@ const Sidebar = (props: any) => {
                     paddingTop: "10px",
                 }}
             >
+                <Link to="/">
+                    <IconButton size="large">
+                        <HomeIcon
+                            style={{ color: "white" }}
+                            fontSize="inherit"
+                        />
+                    </IconButton>
+                </Link>
                 <div style={{ color: "white", fontFamily: "Zelda-Bold" }}>
                     <div style={{ marginBottom: "5px" }}>Simple Weather</div>
                     <div>Powered by OpenWeather.com</div>
