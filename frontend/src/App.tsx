@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Home from "./views/Home";
+import Weather from "./views/Weather";
 
 function App() {
     const [showSidebar, setShowSidebar] = useState(false);
@@ -19,7 +20,8 @@ function App() {
                 minHeight="100vh"
             >
                 <Header openSidebar={() => setShowSidebar(true)} />
-                <Home />
+                {/* <Home /> */}
+                <Weather />
                 <Footer />
             </Box>
             <Sidebar

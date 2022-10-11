@@ -10,7 +10,7 @@ import {
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GithubIcon from "@mui/icons-material/GitHub";
-import "./LoginForm.css";
+import "../../../styles/LoginForm.css";
 
 const LoginForm = (props: any) => {
     return (
