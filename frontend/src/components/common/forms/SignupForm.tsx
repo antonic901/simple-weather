@@ -1,7 +1,43 @@
 import { Button, IconButton, TextField } from "@mui/material";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
+import axios from "../../../utils/axios.util";
+
+type User = {
+    firstName: string;
+    lastName: string;
+    username: string;
+    email: string;
+    password: string;
+};
 
 const SignupForm = (props: any) => {
+    const user: User = {
+        firstName: "",
+        lastName: "",
+        username: "",
+        email: "",
+        password: "",
+    };
+    // const user: User = {
+    //     firstName: "Nikola",
+    //     lastName: "Antonic",
+    //     username: "antonic901",
+    //     email: "antonicnikola6@gmail.com",
+    //     password: "kinzo123",
+    // };
+
+    const handleClick = () => {
+        console.log(user);
+        axios
+            .post("/authentication/register", user)
+            .then((r) => {
+                console.log(r);
+            })
+            .catch((e) => {
+                console.error(e);
+            });
+    };
+
     return (
         <div>
             <div style={{ display: "flex", justifyContent: "center" }}>
@@ -27,24 +63,36 @@ const SignupForm = (props: any) => {
                 label="Name"
                 placeholder="Enter your name..."
                 fullWidth
+                onChange={(e) => {
+                    user.firstName = e.target.value;
+                }}
             />
             <TextField
                 sx={{ mb: 1 }}
                 label="Surname"
                 placeholder="Enter your surname..."
                 fullWidth
+                onChange={(e) => {
+                    user.lastName = e.target.value;
+                }}
             />
             <TextField
                 sx={{ mb: 1 }}
                 label="Username"
                 placeholder="Enter your username..."
                 fullWidth
+                onChange={(e) => {
+                    user.username = e.target.value;
+                }}
             />
             <TextField
                 sx={{ mb: 1 }}
                 label="E-Mail"
                 placeholder="Enter your e-mail..."
                 fullWidth
+                onChange={(e) => {
+                    user.email = e.target.value;
+                }}
             />
             <TextField
                 sx={{ mb: 1 }}
@@ -52,6 +100,9 @@ const SignupForm = (props: any) => {
                 placeholder="Type your password..."
                 type="password"
                 fullWidth
+                onChange={(e) => {
+                    user.password = e.target.value;
+                }}
             />
             <TextField
                 sx={{ mb: 1 }}
@@ -68,7 +119,7 @@ const SignupForm = (props: any) => {
                 >
                     <ArrowBackOutlinedIcon />
                 </IconButton>
-                <Button size="large" color="success">
+                <Button size="large" color="success" onClick={handleClick}>
                     CREATE
                 </Button>
             </div>

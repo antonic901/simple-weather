@@ -5,6 +5,7 @@ import { UsersModule } from './users/users.module';
 
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LocationsModule } from './locations/locations.module';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 @Module({
   imports: [
@@ -15,13 +16,14 @@ import { LocationsModule } from './locations/locations.module';
       port: 5432,
       username: 'postgres',
       password: 'postgres',
-      database: 'newdb25',
+      database: 'postgres',
       // entities: [User],
       autoLoadEntities: true,
       // Dont' use this in production! It's similar to DDL's create-drop. In production use migrations!
       synchronize: true,
     }),
     LocationsModule,
+    AuthenticationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
