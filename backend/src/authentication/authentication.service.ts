@@ -23,12 +23,10 @@ export class AuthenticationService {
       // this should be done using interceptors
       user.id = undefined;
       user.password = undefined;
-      // user.id = undefined;
       //
 
       return user;
     } catch (error) {
-      console.error(error);
       if (error.code === PostgresErrorCode.UniqueViolation) {
         throw new HttpException(
           'User with that email already exists',
